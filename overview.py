@@ -53,14 +53,16 @@ if __name__=="__main__":
 # VG-Knausgård
 
 I kommentarfeltet på VG sine nettsider vert det produsert ein del tekst.
-For å gjera dette meir angripelig, har eg sett på dette i form av antall Knausgård-romaner.
+For å gjera dette meir forståeleg, har eg sett på dette i form av antall Knausgård-romaner.
 Ein `Knausgård` vert definert som `450 sider ganger 400 ord` eller `180 000 ord`.
-Side 136 i Min Kamp 1 (hardback, 2009) var brukt som referanse (388 ord, runda oppover til 400).
+Side 136 i Min Kamp 1 (hardback, 2009) er brukt som referanse (388 ord, runda oppover til 400).
 
 Takk til Jari Bakken i VG for anonymiserte data.
 
+Dataene går over %.0f veker (%d dager).
+
 | Kategori | Sider per dag | Knausgård-romaner per veke   | Totalt antall Knausgård-romaner |
-| -------- | ------------: | -----: | -----: |\n""")
+| -------- | ------------: | -----: | -----: |\n""" % (weeks, delta.days))
 
     for (idx, row) in enumerate(c.execute("""select category, 
              round(sum(word_count) / (?*400),1) as pages_per_day,
