@@ -1,3 +1,13 @@
+
+# VG-Knausgård
+
+I kommentarfeltet på VG sine nettsider vert det produsert ein del tekst.
+For å gjera dette meir angripelig, har eg sett på dette i form av antall Knausgård-romaner.
+Ein `Knausgård` vert definert som `450 sider ganger 400 ord` eller `180 000 ord`.
+Side 136 i Min Kamp 1 (hardback, 2009) var brukt som referanse (388 ord, runda oppover til 400).
+
+Takk til Jari Bakken i VG for anonymiserte data.
+
 | Kategori | Sider per dag | Knausgård-romaner per veke   | Totalt antall Knausgård-romaner |
 | -------- | ------------: | -----: | -----: |
 | Alle | 167.7 | 2.6 | 79.4 |
