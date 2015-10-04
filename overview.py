@@ -61,16 +61,16 @@ Takk til Jari Bakken i VG for anonymiserte data.
 
 Dataene går over %.0f veker (%d dager).
 
-| Kategori | Sider per dag | Knausgård-romaner per veke   | Totalt antall Knausgård-romaner |
+| Kategori | Sider per dag | Knausgård-romaner per veke | Knausgård-romaner per år |
 | -------- | ------------: | -----: | -----: |\n""" % (weeks, delta.days))
 
     for (idx, row) in enumerate(c.execute("""select category, 
              round(sum(word_count) / (?*400),1) as pages_per_day,
              round(sum(word_count) / (?*450*400),1) as knaus_per_week,
-             round(sum(word_count) / (450*400),1) as total_knaus
+             round(365*(sum(word_count) / (?*450*400)),1) as knaus_per_year
              from comments 
              group by category 
-             order by sum(word_count) desc""", [delta.days, weeks])):
+             order by sum(word_count) desc""", [delta.days, weeks, delta.days])):
       fd.write("| ")
       fd.write(row[0].encode('utf-8'))
       fd.write(" | ")
